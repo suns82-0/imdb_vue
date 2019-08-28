@@ -46,9 +46,8 @@ export default {
   },
   mounted () {
     this.id = this.$route.params.id
-    this.movie_data_filtered = this.movie_data_passed.filter(movie => { return movie.movie_rate >= this.$route.query.minRate || 0 & movie.movie_rate <= this.$route.query.maxRate || 10 })
+    this.movie_data_filtered = this.movie_data_passed.filter(movie => { return (movie.movie_rate >= this.$route.query.minRate || 0) & (movie.movie_rate <= this.$route.query.maxRate || 10 )})
     this.movie_data = this.movie_data_filtered.slice(Math.min((this.id - 1) * 20, this.movie_data_passed.length), Math.min(this.movie_data_passed.length, this.id * 20))
-    console.log(this.movie_data)
   },
   // watch: {
   //   movie_data: function (newMovieData, oldMovieData) {

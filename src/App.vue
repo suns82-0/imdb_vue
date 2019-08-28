@@ -52,7 +52,7 @@ export default {
         this.movie_data = this.movie_data_raw.filter(movie => { return movie.movie_rate >= this.$route.query.minRate || 0 & movie.movie_rate <= this.$route.query.maxRate || 10})
         this.movie_data_length = this.movie_data.length
         this.page_number = Math.ceil(this.movie_data_length / 20)
-        this.$router.push('/1')
+        // this.$router.push('/1')
     },
     watch: {
       movie_data: function (newMovieData, oldMovieData) {
